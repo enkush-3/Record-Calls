@@ -1,0 +1,36 @@
+name: Build and Deploy Android APK
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+          cache: true
+
+      - name: Install dependencies
+        run: flutter pub get
+
+      - name: Build Android APK
+        run: flutter build apk --release
+
+      - name: Prepare APK for download
+        run: |
+          mkdir -p deploy
+          cp build/app/outputs/flutter-apk/app-release.apk deploy/record-calls.apk
+          printf '<!doctype html><html><head><meta name="viewport" content="width=device-width,initial-scale=1"><title>Record Calls</title></head><body><h1>Record Calls</h1><a href="/record-calls.apk" download>Download Android APK</a></body></html>' > deploy/index.html
+
+      - name: Deploy APK download page to Vercel
+        run: npx --yes vercel deploy deploy --prod --yes --token="${{ secrets.VERCEL_TOKEN }}"

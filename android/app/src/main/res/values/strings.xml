@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Record Call</string>
+    <string name="accessibility_service_description">Used to detect incoming and outgoing VoIP calls (Viber, Telegram, WhatsApp, Messenger) and record audio conversations locally.</string>
+</resources>

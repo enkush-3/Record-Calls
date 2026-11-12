@@ -1,17 +1,35 @@
-# cube_acr_clone
+# Record Call
+Record Call is a Flutter app for managing audio and screen recordings on Android. Recordings are saved locally on the device.
 
-A new Flutter project.
+## Features
+- Automatic call detection for supported communication apps
+- Audio and screen recording tests
+- Recording search, filters, playback, and organization
+- Local recording storage ([layout](docs/RECORDING_STORAGE_LAYOUT.md))
 
-## Getting Started
+Recording behavior depends on Android permissions, device capabilities, and each source app's audio capture policy. Android may restrict recording the other side of a phone or VoIP call.
 
-This project is a starting point for a Flutter application.
+## Requirements
+```
+- Flutter SDK
+- Android SDK
+```
 
-A few resources to get you started if this is your first Flutter project:
+## Run locally
+```
+flutter pub get
+flutter run
+```
 
-- [Learn Flutter](https://docs.flutter.dev/get-started/learn-flutter)
-- [Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Flutter learning resources](https://docs.flutter.dev/reference/learning-resources)
+### Build
+Android release APK:
+```
+flutter build apk --release
+```
+The APK is created at build/app/outputs/flutter-apk/app-release.apk.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Privacy
+Recordings are stored locally on the device.
+
+## License
+Anyone can use this app.

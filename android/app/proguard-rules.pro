@@ -16,3 +16,8 @@
 
 # Scoped Storage & SQLite
 -keep class com.tekartik.sqflite.** { *; }
+
+# Flutter's deferred-component manager is not used by this app.
+-dontwarn com.google.android.play.core.splitcompat.SplitCompatApplication
+-dontwarn com.google.android.play.core.splitinstall.**
+-dontwarn com.google.android.play.core.tasks.**

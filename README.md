@@ -1,5 +1,4 @@
 # Record Call
-<<<<<<< Updated upstream
 Record Call is a Flutter app for managing audio and screen recordings on Android. Recordings are saved locally on the device.
 
 ## Features
@@ -63,10 +62,7 @@ Android release APK:
 ```
 flutter build apk --release
 ```
-
 The APK is created at build/app/outputs/flutter-apk/app-release.apk.
-
->>>>>>> Stashed changes
 ## Privacy
 Recordings are stored locally on the device.
 
